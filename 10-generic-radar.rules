@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="04e2", ATTRS{idProduct}=="1412", RUN+="/usr/local/bin/radar_load.sh"
