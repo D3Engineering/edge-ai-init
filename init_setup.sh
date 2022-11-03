@@ -15,7 +15,6 @@ MOTORCTL_ROSPKG_URL="${GH_BASE_URL}/edge-ai-ros-motorctl"
 ROS_DRIVERS_DIR="/opt/robotics_sdk/ros1/drivers"
 UDEV_RULES_DIR="/etc/udev/rules.d"
 USR_BIN_DIR="/usr/local/bin"
-XR_USB_DIR="/opt/xr_usb_serial"
 
 function prepare_fd() {
 	rm -f $TEMP_FILENAME
@@ -91,8 +90,6 @@ if [[ $COMPONENTS =~ "[+]2" ]]; then
 	cp 10-generic-radar.rules $UDEV_RULES_DIR
 	mkdir $USR_BIN_DIR
 	cp radar_load.sh $USR_BIN_DIR
-	mkdir $XR_USB_DIR
-	cp xr_usb_serial_common.ko $XR_USB_DIR
 fi
 if [[ $COMPONENTS =~ "[+]3" ]]; then
 	git clone $GIT_VERSION_INSERT $GAMEPAD_ROSPKG_URL ${ROS_DRIVERS_DIR}/d3_gamepad
